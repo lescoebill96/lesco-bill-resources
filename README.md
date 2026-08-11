@@ -1,27 +1,31 @@
 # LESCO Bill Resources
 
-This repository provides useful information and resources for LESCO
-electricity consumers in Pakistan.
+A simple collection of useful resources for LESCO electricity consumers in Pakistan.
 
-## LESCO Bill Check
+## LESCO Bill Estimate Tool
 
-Consumers can check their LESCO electricity bill online using their
-14-digit reference number.
+Want to get a quick idea of your electricity bill based on your units?
 
-For a simple guide to checking and understanding LESCO bills, visit:
+Use our free **LESCO Bill Estimate Tool**:
 
-[LESCO Bill Check Online](https://lescoebill.org/)
+👉 [Open the LESCO Bill Estimate Tool](https://lescoebill96.github.io/lesco-bill-resources/)
 
-## Useful LESCO Information
+The tool provides an estimated bill amount based on the information entered by the user. It is intended for general guidance and should not be considered an official LESCO bill.
+
+## LESCO Bill Information
+
+Useful topics for LESCO consumers include:
 
 - How to check a LESCO bill online
-- LESCO reference number information
-- Understanding electricity bills
+- Understanding your LESCO reference number
+- Electricity bill charges and adjustments
 - LESCO consumer information
-- Electricity billing resources
+- Online bill checking resources
 
-## Website
+For a detailed guide to checking and understanding LESCO bills:
 
-For more LESCO bill information and consumer guides:
+👉 [LESCO Bill Check Online](https://lescoebill.org/)
 
-https://lescoebill.org/
+## About
+
+This repository is maintained as a small, practical resource for people looking for information about LESCO electricity bills in Pakistan.
