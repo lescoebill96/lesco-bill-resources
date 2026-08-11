@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LESCO Bill Estimate Calculator</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 30px 15px;
+      color: #222;
+    }
+
+    .calculator {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 25px;
+      padding: 13px;
+      border: none;
+      border-radius: 6px;
+      background: #0066cc;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    #result {
+      margin-top: 25px;
+      padding: 18px;
+      background: #f0f7ff;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #666;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="calculator">
+
+    <h1>LESCO Bill Estimate Calculator</h1>
+
+    <p>Enter your electricity consumption to get an estimated bill amount.</p>
+
+    <label for="units">Units Consumed</label>
+    <input type="number" id="units" min="0" placeholder="e.g. 250">
+
+    <label for="category">Consumer Category</label>
+    <select id="category">
+      <option value="residential">Residential</option>
+      <option value="commercial">Commercial</option>
+    </select>
+
+    <label for="status">Consumer Status</label>
+    <select id="status">
+      <option value="protected">Protected</option>
+      <option value="unprotected">Unprotected</option>
+    </select>
+
+    <button onclick="calculateBill()">Calculate Estimated Bill</button>
+
+    <div id="result"></div>
+
+    <div class="note">
+      This calculator provides an estimate only. Actual LESCO bills may
+      vary because of taxes, adjustments, surcharges, duties and other
+      applicable charges.
+    </div>
+
+  </div>
+
+  <script>
+    function calculateBill() {
+
+      const units = Number(document.getElementById("units").value);
+      const category = document.getElementById("category").value;
+      const status = document.getElementById("status").value;
+
+      if (!units || units < 0) {
+        alert("Please enter your units consumed.");
+        return;
+      }
+
+      /*
+        Temporary calculation for the first version.
+        We will replace these rates with verified LESCO tariff data
+        before publishing the final calculator.
+      */
+
+      let rate;
+
+      if (category === "commercial") {
+        rate = 45;
+      } else if (status === "protected") {
+        rate = 15;
+      } else {
+        rate = 30;
+      }
+
+      const estimated = units * rate;
+
+      const result = document.getElementById("result");
+
+      result.style.display = "block";
+
+      result.innerHTML = `
+        <strong>Estimated Bill</strong>
+        <h2>Rs. ${estimated.toLocaleString()}</h2>
+        <p>Units: ${units}</p>
+        <p>Estimated rate: Rs. ${rate}/unit</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
